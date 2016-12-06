@@ -9,3 +9,5 @@ Internally the reporter has a HashMap<String,String> object named `imageStepHash
 Whenever you need to take a screenshot push the name of the step and screenshot name to the object within the ExtentFormatter object.
 
 `ExtentFormatter.imageStepHashMap.put(stepName,fileName);`
+
+And please don't hesitate to contact me at giridhar.co@live.com if you face any trouble using it. 
