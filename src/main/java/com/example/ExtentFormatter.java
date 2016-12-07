@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URL;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,6 +17,9 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import com.relevantcodes.extentreports.NetworkMode;
 
+import org.apache.commons.codec.binary.Base64;
+
+import cucumber.deps.com.thoughtworks.xstream.core.util.Base64Encoder;
 import cucumber.runtime.CucumberException;
 import cucumber.runtime.io.URLOutputStream;
 import gherkin.formatter.Formatter;
@@ -262,6 +266,26 @@ public class ExtentFormatter implements Reporter, Formatter {
         } catch (IOException exception) {
             throw new CucumberException("Unable to write to report file item: ", exception);
         }
+    }
+
+    //This function is used externally to convert image to base64 string
+    //Step1 : Convert image to byte array
+    //Step2 : Encode byte array to base64
+    public static String convertToBase64(File imageFile) {
+        //return "convertedImage";
+        byte[] fileContent = null;
+
+        try {
+            fileContent = Files.readAllBytes(imageFile.toPath());
+        } catch (IOException e) {
+            System.out.println(e.toString());
+        }
+
+        Base64Encoder encoder = new Base64Encoder();
+        String base64String = encoder.encode(fileContent);
+
+        //String base64String = Base64.encodeBase64URLSafeString(fileContent);
+        return "data:image/jpg;base64," + base64String;
     }
 
 }
