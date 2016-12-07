@@ -10,4 +10,14 @@ Whenever you need to take a screenshot push the name of the step and screenshot 
 
 `ExtentFormatter.imageStepHashMap.put(stepName,fileName);`
 
-And please don't hesitate to contact me at giridhar.co@live.com if you face any trouble using it. 
+##Change Log
+
+Version 1.1.0
+
+* Added screen shot functionality. Now users can add screenshots to reports by pushing them to the imageStepHasMap object.
+
+Version 1.2.0
+
+* Screenshot images are embedded in html as base64 encoded strings, so that distribution is easier.
+
+And please don't hesitate to contact me at giridhar.co@live.com if you face any trouble using it.

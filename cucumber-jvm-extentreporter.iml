@@ -43,5 +43,6 @@
     <orderEntry type="library" exported="" name="cucumber-jvm-deps-1.0.5" level="project" />
     <orderEntry type="library" exported="" name="gherkin-2.12.2" level="project" />
     <orderEntry type="library" exported="" name="commons-codec-1.10" level="project" />
+    <orderEntry type="library" exported="" name="cucumber-jvm-extentreporter.cucumber-jvm-extentreporter-1.2.0" level="project" />
   </component>
 </module>
